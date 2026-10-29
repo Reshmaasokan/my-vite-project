@@ -24,7 +24,9 @@ export default function MainPage(){
             />
           ) : (
             <AddList
+            fruits={fruits}
             handleAdd={handleAdd}
+            setFruits={setFruits}
             />
             )
           }
