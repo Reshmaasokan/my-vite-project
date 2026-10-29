@@ -9,10 +9,6 @@ export default function MainPage(){
 
     const handleAdd=(e)=>{
         e.preventDefault()
-        setFruits({
-          ...fruits,
-          fruits:e.target.value
-        })
         setDisplay(!display)
     }
 
@@ -29,7 +25,8 @@ export default function MainPage(){
           ) : (
             <AddList
             handleAdd={handleAdd}
-            
+            fruits={fruits}
+            setFruits={setFruits}
             />
             )
           }
