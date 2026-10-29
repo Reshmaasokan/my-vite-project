@@ -2,14 +2,14 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
-import C_profileinfo from './pages/ternaryoperationrendering/C_profileinfo';
+import MainPage from './pages/Simple_loop/MainPage.jsx';
 
 
 
 function App(){
   const[show,setShow]=useState(true)
   return(
-    <div>{show && (<C_profileinfo/>)
+    <div>{show && (<MainPage/>)
       }</div>
   )
 }
