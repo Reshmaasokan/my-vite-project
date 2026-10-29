@@ -1,7 +1,5 @@
 export default function AddList({
-    handleAdd,
-    fruits,
-    setFruits
+    handleAdd
 }){
     return(
         <>
@@ -9,7 +7,7 @@ export default function AddList({
             <div className="h4 text-center text-primary">Add the fruit</div>
             <form className="w-50">
                 <label htmlFor="form-label">Add fruits</label>
-                <input className="form-control" onChange={(e)=>{handleAdd()}}></input>
+                <input className="form-control" name="fruits" onChange={handleAdd}></input>
                 <button className="mt-3"type="submit">Add</button>
             </form>
         </div>
