@@ -1,58 +1,29 @@
 import { useState } from "react"
-
-
+ 
 export default function MainPage(){
-    const [fruits,setFruits]=useState(['apple','orange','grapes','pineapple'])
+  
+  const[fruit,setFruit]=useState(['apple','orange','strawberry','banana'])
+   
+  return(
+    <>
 
-    const [display,setDisplay]=useState(false)
+    <div className="text-center text-primary h1">Fruits List</div>
 
-    const [newfruits,setNewfruits]=useState("")
+    <div className="container text-info">{fruit.map((value,index)=>{
+      return(
+        <p key={index}>{value}</p>
+      )
+      })}
 
-    const edit=()=>{
-      setDisplay(!display)
-    }
+    </div>
 
-    const handleAdd=(e)=>{
-        e.preventDefault()
-        setNewfruits(e.target.value)
-    }
+    <div className="btn btn-primary" onClick={()=>{
+      setFruit({
+        ...fruit,
+        mango
+      })
+    }}>Add</div>
 
-    const addfruit=()=>{ setFruits({...fruits [newfruits]})}
-
-    return (
-      <>
-        <div className="h4 text-center">Fruit list</div>
-        <div>
-          {!display ? 
-          (
-            <div className="container">
-
-              <ul>
-                {fruits.map((values, index) => {
-                  return <p key={index}>{values}</p>;
-                })}
-              </ul>
-
-              <button
-                className="btn-primary"
-                onClick={edit}
-              >Edit</button>
-
-            </div>
-          ) : 
-          (
-            <div className="container">
-              <div className="h4 text-center text-primary">Add the fruit</div>
-                <label className="form-label">Add fruits</label>
-                <input className="form-control" type="text" name="newfruits" onChange={handleAdd} placeholder="Enter fruit name"/>
-                <button className="mt-3" onClick={addfruit}>
-                Add
-              </button>
-            </div>
-
-          )
-        }
-        </div>
-      </>
-    );
+    </>
+  )
 }
