@@ -8,6 +8,8 @@ export default function MainPage(){
 
   const [edit,setEdit]=useState(false)
 
+  const [status,setStatus]=useState(null)
+
   const handlechange=(e)=>{
     setNewfruit(e.target.value)
   }
@@ -15,12 +17,28 @@ export default function MainPage(){
   const handlesubmit=(e)=>{
     e.preventDefault()
 
-        setFruit([
+    if(newfruit.trim()===""){
+      return;
+    }
+
+    const findAvailability=fruit.find(value =>value.toLowerCase() ==newfruit.toLowerCase())
+
+    if(findAvailability === undefined){
+      setFruit([
        ...fruit,
        newfruit
     ])
-    setNewfruit("")
-    setEdit(false)
+
+        setNewfruit("")
+        setEdit(false)
+        setStatus(true)
+    }
+    else{
+      setStatus(false)
+    }
+
+
+
   }
 
    
@@ -45,6 +63,13 @@ export default function MainPage(){
       (
 
         <div className="container">
+          <div>
+            {status === null ? 
+            (null):
+            (status===true)? ("Fruit added successfully")
+            : ("Fruit already exist try another fruit!!")
+            }
+          </div>
 
         <form onSubmit={handlesubmit}>
 
