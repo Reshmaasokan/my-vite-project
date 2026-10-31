@@ -1,4 +1,4 @@
-import { Button } from "bootstrap"
+
 import { useState } from "react"
 
 export default function MainPage(){
@@ -24,6 +24,10 @@ export default function MainPage(){
     }
 
     const handledelete=(fruitIndex)=>{
+       const deleteelemnt=fruit.filter((value,index)=>index!=fruitIndex)
+       setFruit(
+        deleteelemnt
+       )
     }
 
     return (
@@ -36,21 +40,27 @@ export default function MainPage(){
             <th>Name</th>
             <th>Action</th>
           </thead>
-          <tbody>
-            {fruit.map((value, index) => {
+
+          
+        <tbody>
+          { fruit && fruit.length!=0? (
+            fruit.map((value, index) => {
                 return (
                 
                     <tr>
                       <td>{index + 1}</td>
                       <td>{value}</td>
-                      <td>{<button onclick={()=>handledelete(index)}>delete</button>}</td>
+                      <td>{<button onClick={()=>handledelete(index)}>delete</button>}</td>
                     </tr>
-    
-                );
-              })
-            }
-    
-          </tbody>
+                )
+              }))
+            :
+            (
+             <tr><td colSpan={3}>No fruits found</td></tr>
+            )
+        }
+        </tbody>
+
       </table>
 
       </div>
@@ -67,5 +77,5 @@ export default function MainPage(){
 
 
       </>
-    );
+    )
 }
