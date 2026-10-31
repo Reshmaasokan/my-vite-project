@@ -6,6 +6,8 @@ export default function MainPage(){
 
   const [newfruit,setNewfruit]=useState("")
 
+  const [edit,setEdit]=useState(false)
+
   const handlechange=(e)=>{
     setNewfruit(e.target.value)
   }
@@ -17,8 +19,8 @@ export default function MainPage(){
        ...fruit,
        newfruit
     ])
-    alert("Button clicked!");
     setNewfruit("")
+    setEdit(false)
   }
 
    
@@ -26,13 +28,23 @@ export default function MainPage(){
     <>
       <div className="text-center text-primary h1">Fruits List</div>
 
+      <div className="container">{ !edit ? 
+      (
         <div className="container text-info">
           {fruit.map((value, index) => {
             return <p key={index}>{value}</p>;
           })}
+          <button className="btn-primary" onClick={()=>{
+            setEdit(true)
+          }}>Edit</button>
         </div>
+        
 
-      <div className="container">
+      )
+      :
+      (
+
+        <div className="container">
 
         <form onSubmit={handlesubmit}>
 
@@ -58,6 +70,12 @@ export default function MainPage(){
         </form>
 
       </div>
+
+      )
+      }
+      </div>
+
+
     </>
   );
 }
