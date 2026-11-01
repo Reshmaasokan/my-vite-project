@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 export default function DisplayFruitList({
     fruit,
     setFruit,
@@ -11,9 +13,34 @@ export default function DisplayFruitList({
       )
       setMessage("delete")
   }
+
+  const [searchElement,setSearchElement]=useState("")
+  
+  const searchevent=(e)=>{
+    e.preventDefault()
+    
+  }
   return (
     <>
-      <div className="container w-50">
+
+        <div className="container w-50 d-flex gap-2">
+          <form onSubmit={searchevent}>
+            <label htmlFor="searching" className="form-label"></label>
+            <input
+              type="text"
+              className="form-control"
+              id="searching"
+              value={searchElement}
+              onChange={(e)=>{setSearchElement(e.target.value)}}
+            />
+            <button type="submit">Search</button>
+          </form>
+        </div>
+     
+
+
+
+      <div className="container w-50 mt-2">
         <table className="table">
           <thead>
             <tr>
@@ -33,7 +60,12 @@ export default function DisplayFruitList({
                     {
                       <div className="d-flex gap-2">
                         <button className="bg-success">edit</button>
-                        <button className="bg-danger" onClick={()=>handledelete(index)} >Delete</button>
+                        <button
+                          className="bg-danger"
+                          onClick={() => handledelete(index)}
+                        >
+                          Delete
+                        </button>
                       </div>
                     }
                   </td>

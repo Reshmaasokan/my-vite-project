@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 export default function Addfruit({
     fruit,
     setFruit,
@@ -29,14 +30,13 @@ const [newfruit,setNewfruit]=useState("")
         setMessage("duplicate")
     }
 
-    
-
   };
+
   return (
     <>
-    <div className="container d-flex gap-1 w-50 mt-4">
-      <form onSubmit={handleevent}>
-        
+
+      <div className="container d-flex gap-1 w-50 mt-4">
+        <form onSubmit={handleevent}>
           <label htmlFor="newfruitlist" className="form-label">
             Add fruit
           </label>
@@ -50,9 +50,10 @@ const [newfruit,setNewfruit]=useState("")
               setNewfruit(e.target.value);
             }}
           />
-          <button type="submit"className="bg-info">Add</button>
-        
-      </form>
+          <button type="submit" className="bg-info">
+            Add
+          </button>
+        </form>
       </div>
     </>
   );

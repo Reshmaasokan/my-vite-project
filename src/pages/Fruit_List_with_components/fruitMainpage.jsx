@@ -10,7 +10,8 @@ export default function FruitMainpage(){
 
     return (
       <>
-      <div className="container">
+      
+      <div className="container w-50">
         <div>{message === "Added" ? (
             <div className="alert alert-success">Added Successfully</div>
           ) : message === "edit" ? (
