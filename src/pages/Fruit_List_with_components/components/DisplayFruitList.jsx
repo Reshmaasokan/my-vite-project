@@ -1,6 +1,16 @@
 export default function DisplayFruitList({
-    fruit
+    fruit,
+    setFruit,
+    setMessage
 }) {
+
+  const handledelete=(fruitindex)=>{
+      const deleteelmt=fruit.filter((value,index)=>index!=fruitindex)
+      setFruit(
+        deleteelmt
+      )
+      setMessage("delete")
+  }
   return (
     <>
       <div className="container w-50">
@@ -23,7 +33,7 @@ export default function DisplayFruitList({
                     {
                       <div className="d-flex gap-2">
                         <button className="bg-success">edit</button>
-                        <button className="bg-danger" >Delete</button>
+                        <button className="bg-danger" onClick={()=>handledelete(index)} >Delete</button>
                       </div>
                     }
                   </td>

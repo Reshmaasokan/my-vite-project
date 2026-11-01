@@ -27,6 +27,8 @@ export default function FruitMainpage(){
         <div>
           <DisplayFruitList
             fruit={fruit}
+            setFruit={setFruit}
+            setMessage={setMessage}
 
           />
         </div>
