@@ -15,29 +15,58 @@ export default function DisplayFruitList({
   }
 
   const [searchElement,setSearchElement]=useState("")
+
+  const [filter, setFilter] = useState(null);
   
   const searchevent=(e)=>{
     e.preventDefault()
+    if(searchElement.trim()===""){
+      setFilter(null)
+      setMessage("empty")
+      return;
+    }
+    
+      const check=fruit.filter((value)=>value.toLowerCase().includes(searchElement.trim().toLowerCase()))
+      if(check.length===0){
+        setMessage("empty")
+      }
+      else{
+        setMessage(null)
+      }
+      setFilter(check)
+      setSearchElement("")
+    
     
   }
   return (
     <>
+      <div className="container w-50 d-flex gap-2">
+        <form onSubmit={searchevent}>
+          <label htmlFor="searching" className="form-label">
+            Search fruit
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="searching"
+            value={searchElement}
+            onChange={(e) => {
+              setSearchElement(e.target.value);
+            }}
+          />
+          <button type="submit">Search</button>
 
-        <div className="container w-50 d-flex gap-2">
-          <form onSubmit={searchevent}>
-            <label htmlFor="searching" className="form-label"></label>
-            <input
-              type="text"
-              className="form-control"
-              id="searching"
-              value={searchElement}
-              onChange={(e)=>{setSearchElement(e.target.value)}}
-            />
-            <button type="submit">Search</button>
-          </form>
-        </div>
-     
-
+          <button
+            type="button"
+            onClick={() => {
+              setFilter(null);
+              setMessage(null);
+            }}
+          >
+            Show All
+          </button>
+        </form>
+      </div>
 
 
       <div className="container w-50 mt-2">
@@ -51,10 +80,10 @@ export default function DisplayFruitList({
           </thead>
 
           <tbody>
-            {fruit.map((value, index) => {
+            {(filter !== null ? filter : fruit).map((value, index) => {
               return (
-                <tr>
-                  <td key={index}>{index + 1}</td>
+                <tr key={index}>
+                  <td>{index + 1}</td>
                   <td>{value}</td>
                   <td>
                     {

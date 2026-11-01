@@ -20,7 +20,10 @@ export default function FruitMainpage(){
             <div className="alert alert-success">Deleted Successfully</div>
           ) : message === "duplicate" ? (
             <div className="alert alert-danger">Already Exist</div>
-          ) : null}
+          ) : message==="empty" ?(
+            <div className="alert alert-danger">Not in the List</div>
+          ) :null
+          }
         </div>
 
       </div>
