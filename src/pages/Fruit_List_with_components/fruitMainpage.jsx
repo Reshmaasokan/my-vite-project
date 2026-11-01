@@ -1,38 +1,29 @@
 import { useState } from "react"
 import DisplayFruitList from "./components/DisplayFruitList"
+import AddfruitList from "./components/AddfruitList"
+
 export default function FruitMainpage(){
 
     const [fruit,setFruit]=useState(["apple","orange","grapes","kiwi"])
 
-    const [newfruit,setNewfruit]=useState([])
-
     const [message,setMessage] =useState(null)
-
-    const handleevent=(e)=>{
-          e.preventDefault()
-          setFruit([
-            ...fruit,
-            newfruit
-          ])
-          setMessage("Added")
-    }
-
-
 
     return (
       <>
+      <div className="container">
         <div>{message === "Added" ? (
-            <div className="alert alert-success"></div>
+            <div className="alert alert-success">Added Successfully</div>
           ) : message === "edit" ? (
-            <div className="alert alert-success"></div>
+            <div className="alert alert-success">Edited Successfully</div>
           ) : message === "delete" ? (
-            <div className="alert alert-success"></div>
+            <div className="alert alert-success">Deleted Successfully</div>
           ) : message === "duplicate" ? (
-            <div className="alert alert-danger"></div>
-          ) : (
-            message
-          )}
+            <div className="alert alert-danger">Already Exist</div>
+          ) : null}
         </div>
+
+      </div>
+
         <div>
           <DisplayFruitList
             fruit={fruit}
@@ -41,24 +32,11 @@ export default function FruitMainpage(){
         </div>
 
         <div>
-          <form onSubmit={handleevent}>
-            <div className="container d-flex gap-1 w-50 mt-4">
-              <label htmlFor="newfruitlist" className="form-label">
-                Add fruit
-              </label>
-              <input
-                type="text"
-                name="newfruit"
-                id="newfruitlist"
-                className="form-control"
-                value={newfruit}
-                onChange={(e) => {
-                  setNewfruit(e.target.value);
-                }}
-              />
-              <button className="bg-info">Add</button>
-            </div>
-          </form>
+          <AddfruitList
+          fruit={fruit}
+          setFruit={setFruit}
+          setMessage={setMessage}
+          />
         </div>
       </>
     );

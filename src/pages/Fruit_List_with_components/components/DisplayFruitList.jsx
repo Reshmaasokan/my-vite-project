@@ -17,7 +17,7 @@ export default function DisplayFruitList({
             {fruit.map((value, index) => {
               return (
                 <tr>
-                  <td>{index + 1}</td>
+                  <td key={index}>{index + 1}</td>
                   <td>{value}</td>
                   <td>
                     {
