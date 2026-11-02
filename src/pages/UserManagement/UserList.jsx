@@ -3,29 +3,24 @@ import users from "./user.json";
 
 export function UserList() {
 
-  const [userList, setUserList] = useState(users);
+  const [userList,setUserList] = useState(users);
 
-  const [editIndex, setEditIndex] = useState(null);
+  const [editIndex,setEditIndex] = useState(null);
 
-  const [editUser, setEditUser] = useState({});
+  const [editUser,setEditUser] = useState({});
 
-  const [message, setMessage] = useState(null);
+  const [message,setMessage] = useState(null);
 
-
-  // Edit button
-  const handleEdit = (index) => {
+  const handleEdit =(index) => {
     setEditIndex(index);
     setEditUser({ ...userList[index] });
     setMessage(null);
   };
 
 
-  // Handle input changes
   const handleChange = (e) => {
-
-    const { name, value } = e.target;
-
-    if (name === "firstname" || name === "lastname") {
+    const {name,value} = e.target;
+    if (name==="firstname" || name==="lastname") {
       setEditUser({
         ...editUser,
         name: {
@@ -34,8 +29,7 @@ export function UserList() {
         }
       });
     }
-
-    else if (name === "city" || name === "street") {
+    else if (name ==="city"|| name==="street") {
       setEditUser({
         ...editUser,
         address: {
@@ -44,7 +38,6 @@ export function UserList() {
         }
       });
     }
-
     else {
       setEditUser({
         ...editUser,
@@ -54,30 +47,23 @@ export function UserList() {
   };
 
 
-  // Save updated user
-  const handleSave = () => {
-
+  const handleSave=() =>{
     const updatedUsers = userList.map((value, index) => {
       return index === editIndex ? editUser : value;
     });
-
     setUserList(updatedUsers);
     setEditIndex(null);
     setMessage("updated");
   };
 
 
-  // Delete user
-  const handleDelete = (userIndex) => {
-
+  const handleDelete =(userIndex) => {
     const deleteUser = userList.filter(
-      (value, index) => index !== userIndex
+      (value, index) => index!==userIndex
     );
-
     setUserList(deleteUser);
     setMessage("deleted");
-
-    if (editIndex === userIndex) {
+    if (editIndex===userIndex) {
       setEditIndex(null);
     }
   };
@@ -86,12 +72,10 @@ export function UserList() {
   return (
     <div className="container mt-5">
 
-      <h2 className="text-center text-primary fw-bold mb-4">
+      <h2 className="text-center text-success fw-bold mb-4">
         User Details
       </h2>
 
-
-      {/* Alert Messages */}
 
       {message === "updated" ? (
         <div className="alert alert-success">
@@ -104,8 +88,7 @@ export function UserList() {
       ) : null}
 
 
-      <table className="table table-bordered text-center border-dark shadow">
-
+      <table className="table  text-center border-dark shadow">
         <thead className="table-dark">
           <tr>
             <th>ID</th>
@@ -130,12 +113,8 @@ export function UserList() {
 
                 <td>{user.id}</td>
 
-
-                {/* Full Name */}
-
                 <td>
                   {editIndex === index ? (
-
                     <div>
                       <input
                         type="text"
@@ -144,7 +123,6 @@ export function UserList() {
                         value={editUser.name?.firstname || ""}
                         onChange={handleChange}
                       />
-
                       <input
                         type="text"
                         name="lastname"
@@ -153,18 +131,12 @@ export function UserList() {
                         onChange={handleChange}
                       />
                     </div>
-
                   ) : (
-
                     <span className="text-capitalize fw-bold">
                       {user.name.firstname} {user.name.lastname}
                     </span>
-
                   )}
                 </td>
-
-
-                {/* Email */}
 
                 <td>
                   {editIndex === index ? (
@@ -176,16 +148,11 @@ export function UserList() {
                       value={editUser.email || ""}
                       onChange={handleChange}
                     />
-
                   ) : user.email}
                 </td>
 
-
-                {/* Username */}
-
                 <td>
                   {editIndex === index ? (
-
                     <input
                       type="text"
                       name="username"
@@ -193,16 +160,11 @@ export function UserList() {
                       value={editUser.username || ""}
                       onChange={handleChange}
                     />
-
                   ) : user.username}
                 </td>
 
-
-                {/* Phone */}
-
                 <td>
                   {editIndex === index ? (
-
                     <input
                       type="text"
                       name="phone"
@@ -210,16 +172,11 @@ export function UserList() {
                       value={editUser.phone || ""}
                       onChange={handleChange}
                     />
-
                   ) : user.phone}
                 </td>
 
-
-                {/* City */}
-
                 <td>
                   {editIndex === index ? (
-
                     <input
                       type="text"
                       name="city"
@@ -229,7 +186,6 @@ export function UserList() {
                     />
 
                   ) : (
-
                     <span className="text-capitalize">
                       {user.address.city}
                     </span>
@@ -237,12 +193,8 @@ export function UserList() {
                   )}
                 </td>
 
-
-                {/* Street */}
-
                 <td>
                   {editIndex === index ? (
-
                     <input
                       type="text"
                       name="street"
@@ -260,26 +212,19 @@ export function UserList() {
                   )}
                 </td>
 
-
-                {/* Action Buttons */}
-
                 <td>
 
                   <div className="d-flex gap-2">
-
                     {editIndex === index ? (
-
                       <button
-                        className="btn btn-success btn-sm"
+                        className="btn btn-success"
                         onClick={handleSave}
                       >
                         Save
                       </button>
-
                     ) : (
-
                       <button
-                        className="btn btn-primary btn-sm"
+                        className="btn btn-primary"
                         onClick={() => handleEdit(index)}
                       >
                         Edit
@@ -287,9 +232,8 @@ export function UserList() {
 
                     )}
 
-
                     <button
-                      className="btn btn-danger btn-sm"
+                      className="btn btn-danger"
                       onClick={() => handleDelete(index)}
                     >
                       Delete
