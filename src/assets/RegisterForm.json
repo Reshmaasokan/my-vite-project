@@ -1,0 +1,27 @@
+[
+    {
+        "fieldLabel":"Enter Candidate Name",
+        "fieldClassName":"form-control",
+        "fieldtype":"text",
+        "fieldName":"CandidateName"
+    },
+    {
+        "fieldLabel":"Enter Candidate Age",
+        "fieldClassName":"form-control",
+        "fieldtype":"text",
+        "fieldName":"CandidateAge"
+    },
+    {
+        "fieldLabel":"Enter Candidate email",
+        "fieldClassName":"form-control",
+        "fieldtype":"email",
+        "fieldName":"CandidateEmail"
+    },
+    {
+        "fieldLabel":"Enter Candidate password",
+        "fieldClassName":"form-control",
+        "fieldtype":"password",
+        "fieldName":"CandidatePassword"
+    }
+
+]
