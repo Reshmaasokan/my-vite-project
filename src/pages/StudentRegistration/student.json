@@ -1,0 +1,44 @@
+[
+    {
+        "fieldlabelclassName":"form-label",
+        "fieldlabeltext":"Enter student Name",
+        "fieldClassName":"form-control",
+        "fieldType":"text",
+        "fieldName":"StudentName",
+        "fieldPlaceholder":""
+    },
+    {
+            
+        "fieldlabelclassName":"form-label",
+        "fieldlabeltext":"Enter student Age",
+        "fieldClassName":"form-control",
+        "fieldType":"text",
+        "fieldName":"StudentAge",
+        "fieldPlaceholder":""
+    },
+    {
+        "fieldlabelclassName":"form-label",
+        "fieldlabeltext":"Enter student email",
+        "fieldClassName":"form-control",
+        "fieldType":"email",
+        "fieldName":"StudentEmail",
+        "fieldPlaceholder":""
+    },
+    {
+        "fieldlabelclassName":"form-label",
+        "fieldlabeltext":"Enter student password",
+        "fieldClassName":"form-control",
+        "fieldType":"password",
+        "fieldName":"StudentPassword",
+        "fieldPlaceholder":""
+    },
+    {
+        "fieldlabelclassName":"",
+        "fieldlabeltext":"",
+        "fieldClassName":"btn btn-primary mt-3",
+        "fieldType":"submit",
+        "fieldName":"Register",
+        "fieldPlaceholder":""
+    }
+
+]
