@@ -1,5 +1,5 @@
 import { Field } from "formik";
-
+import StudentFieldSelect from "./StudentFieldSelect"
 export default function StudentFieldInputCreation({
   field: {
     fieldlabelclassName,
@@ -7,20 +7,36 @@ export default function StudentFieldInputCreation({
     fieldClassName,
     fieldType,
     fieldName,
-    fieldPlaceholder
+    fieldPlaceholder,
+    fieldOption
   },
 }){
   return (
-  <>
-  <div>
-    <label className={fieldlabelclassName}>{fieldlabeltext}</label>
-    <Field
-     className={fieldClassName}
-     type={fieldType}
-     name={fieldName}
-     placeholder={fieldPlaceholder}
-    />
-    </div>
-  </>
-  )
+    <>
+      <div>
+        <label className={fieldlabelclassName}>{fieldlabeltext}</label>
+        {fieldType != "select" ? (
+          <div>
+              <Field
+                className={fieldClassName}
+                type={(fieldType != "textarea") && fieldType}
+                as={(fieldType === "textarea") && fieldType}
+                name={fieldName}
+                placeholder={fieldPlaceholder}
+              />
+          </div>
+        ) : (
+          <div>
+            <StudentFieldSelect
+                fieldClassName={fieldClassName}
+                fieldType={fieldType}
+                fieldName={fieldName}
+                fieldPlaceholder={fieldPlaceholder}
+                fieldOption={fieldOption}
+            />
+          </div>
+        )}
+      </div>
+    </>
+  );
 }

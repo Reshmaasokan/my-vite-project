@@ -5,16 +5,25 @@ export default function StudentHome(){
     return (
       <>
         <div className="container m-3">
-          <div className="h2 text-center text-primary"> Student Management System </div>
-          <button className="btn btn-primary" onClick={() => {setDisplay(!display)}}>
-                Register Student
-          </button>
+              <div className="h2 text-center text-primary">
+                Student Management System
+              </div>
+              {!display && (
+                <button
+                  className="btn btn-primary"
+                  onClick={() => {
+                    setDisplay(!display);
+                  }}
+                >
+                  Register Student
+                </button>
+              )}
+
           <div className="container">
-                <StudentRegistrationMain
-                    display={display}
-                />
+                <StudentRegistrationMain 
+                display={display} />
           </div>
         </div>
       </>
-    )
+    );
 }

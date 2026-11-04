@@ -5,7 +5,8 @@
         "fieldClassName":"form-control",
         "fieldType":"text",
         "fieldName":"StudentName",
-        "fieldPlaceholder":""
+        "fieldPlaceholder":"",
+        "fieldOption":""
     },
     {
             
@@ -14,7 +15,8 @@
         "fieldClassName":"form-control",
         "fieldType":"text",
         "fieldName":"StudentAge",
-        "fieldPlaceholder":""
+        "fieldPlaceholder":"",
+        "fieldOption":""
     },
     {
         "fieldlabelclassName":"form-label",
@@ -22,7 +24,8 @@
         "fieldClassName":"form-control",
         "fieldType":"email",
         "fieldName":"StudentEmail",
-        "fieldPlaceholder":""
+        "fieldPlaceholder":"",
+        "fieldOption":""
     },
     {
         "fieldlabelclassName":"form-label",
@@ -30,7 +33,37 @@
         "fieldClassName":"form-control",
         "fieldType":"password",
         "fieldName":"StudentPassword",
-        "fieldPlaceholder":""
+        "fieldPlaceholder":"",
+        "fieldOption":""
+    },
+    {
+        "fieldlabelclassName":"form-label",
+        "fieldlabeltext":"Enter student address",
+        "fieldClassName":"form-control",
+        "fieldType":"textarea",
+        "fieldName":"StudentAddress",
+        "fieldPlaceholder":"Max 120 words",
+        "fieldOption":""
+    },
+    {
+        "fieldlabelclassName":"",
+        "fieldlabeltext":"Select student City",
+        "fieldClassName":"form-control",
+        "fieldType":"select",
+        "fieldName":"StudentCity",
+        "fieldPlaceholder":"",
+        "fieldOption":[
+            "Please enter the city",
+            "Chennai",
+            "Madurai",
+            "Comibatore",
+            "Trichy",
+            "Salem",
+            "Tirunelveli",
+            "KanyaKumari",
+            "Kanchipuram",
+            "Nammakkal"
+        ]
     },
     {
         "fieldlabelclassName":"",
@@ -38,7 +71,8 @@
         "fieldClassName":"btn btn-primary mt-3",
         "fieldType":"submit",
         "fieldName":"Register",
-        "fieldPlaceholder":""
+        "fieldPlaceholder":"",
+        "fieldOption":""
     }
 
 ]

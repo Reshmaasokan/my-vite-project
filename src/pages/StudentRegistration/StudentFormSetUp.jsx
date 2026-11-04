@@ -2,7 +2,9 @@ export const initialValues={
         StudentName:"",
         StudentAge:"",
         StudentEmail:"",
-        StudentPassword:""    
+        StudentPassword:"",
+        StudentAddress:"",
+        StudentCity:""    
 }
 
 export const handleSubmit=(value)=>{
