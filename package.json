@@ -13,7 +13,8 @@
     "bootstrap": "^5.3.8",
     "formik": "^2.4.9",
     "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "react-dom": "^19.2.8",
+    "yup": "^1.7.1"
   },
   "devDependencies": {
     "@babel/core": "^7.29.7",
