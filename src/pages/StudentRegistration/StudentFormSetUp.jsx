@@ -5,4 +5,6 @@ export const initialValues={
         StudentPassword:""    
 }
 
-export const handleSubmit=(value)=>{console.log("Form details submitted====>",value)}
+export const handleSubmit=(value)=>{
+        console.log("Form details submitted====>",value)
+}

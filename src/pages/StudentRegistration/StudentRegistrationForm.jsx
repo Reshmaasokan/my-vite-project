@@ -10,16 +10,13 @@ export default function StudentRegistrationForm(){
             {studentDetails.map((value,key)=>{
                 return (
                   <div key={key}>
-                    <StudentFieldInputCreation field={value} />
+                    <StudentFieldInputCreation 
+                        field={value} />
                   </div>
                 );
             })}
-
          </Form>
-
-
       </div>
-
       </>
     );
 }
