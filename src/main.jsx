@@ -2,13 +2,13 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
-import StudentHome from './pages/StudentRegistration/StudentHome'
+import ProductList from './pages/ProductList'
 
 
 
 function App(){
   const[show,setShow]=useState(true)
-  return <div>{show && <StudentHome />}</div>;
+  return <div>{show && <ProductList />}</div>;
 }
 createRoot(document.getElementById('root')).render(
   <div>
