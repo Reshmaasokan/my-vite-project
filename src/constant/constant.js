@@ -6,7 +6,7 @@ export const url={
 }
 
 export const option={
-    "header":{
+    "headers":{
         "Content-Type":"application/json"
     }
 }

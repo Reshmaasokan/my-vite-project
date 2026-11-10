@@ -1,20 +1,30 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
+import { fetchApicall } from "../service/fetchapicall";
+export default function ProductList() {
+  const [display, setDisplay] = useState([]);
+  const [currentProduct, setCurrentProduct] = useState(1);
+  const item = "product";
 
-export default function ProductList(){
-    const [display,setDisplay]=useState([])
-
-    useEffect(()=>{
-        fetchApicall("product","get")
-        .then((data)=>setDisplay(data))
-        .catch((error)=>(console.error(error)))
-    },[])
-    return(
-        <>
-        <div className="container">
-            <div className="h1 text-center">Product</div>
-            <div>{display}</div>
+  useEffect(() => {
+    fetchApicall(`${item}/${currentProduct}`, "get")
+      .then((data) => setDisplay(data))
+      .catch((error) => console.error(error));
+  }, [currentProduct]);
+  return (
+    <>
+      <div className="container">
+        <div className="h1 text-center">Product</div>
+        <div>{JSON.stringify(display)}</div>
+        <div className="d-flex gap-3 mt-2">
+          <div className="btn btn-primary" onClick={()=>{setCurrentProduct(currentProduct + 1);}}>
+            Next {item}
+          </div>
+    
+          <div className="btn btn-primary" onClick={()=>{setCurrentProduct(currentProduct - 1);}}>
+            Previous {item}
+          </div>
         </div>
-        
-        </>
-    )
+      </div>
+    </>
+  );
 }
