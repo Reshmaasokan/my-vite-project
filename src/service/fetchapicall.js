@@ -6,7 +6,8 @@ export const fetchApicall=async(Endpoint,Method,body={})=>{
     const response=await fetch(url,option,body)
     const responseData= await response.json()
     return responseData
- }catch(error){
+ }
+ catch(error){
       console.log("Error::::",error)
  }
 }
