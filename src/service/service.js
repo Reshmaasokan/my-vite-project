@@ -1,10 +1,11 @@
 import { BaseUrl, url,option } from "../constant/constant";
+
 export const getEndPoint = (pathname) => {
 
   let path = pathname.includes('/') ? pathname.split('/') : pathname;
 
   let endPoint;
-  
+
   if(typeof path==="string"){
       endPoint = `${BaseUrl}${url[path]}`;
   }
