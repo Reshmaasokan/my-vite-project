@@ -16,11 +16,15 @@ export const getEndPoint = (pathname) => {
 
 }
 
-export const getOption = (Method, body) => {
+export const getOption = (Method, body={},controller) => {
 
   option.method = Method;
-  if (Method === "post" || Method === "put" || Method === "patch") {
+  if (Method === "post" || Method === "put" || Method === "patch" && body!={}) {
     option.body = JSON.stringify(body);
+  }
+
+  if(controller !=undefined){
+    option.signal=controller.signal
   }
   return option
 

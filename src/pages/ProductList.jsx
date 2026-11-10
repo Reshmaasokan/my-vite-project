@@ -6,9 +6,17 @@ export default function ProductList() {
   const item = "product";
 
   useEffect(() => {
-    fetchApicall(`${item}/${currentProduct}`, "get")
+
+    const controller =new AbortController()
+    fetchApicall(`${item}/${currentProduct}`, "get",{},controller)
       .then((data) => setDisplay(data))
-      .catch((error) => console.error(error));
+      .catch((error) => console.error(error))
+
+      return(()=>{
+        controller.abort()
+      })
+
+
   }, [currentProduct]);
 
 
@@ -26,9 +34,9 @@ export default function ProductList() {
                     Next {item}
                 </div>
         
-                <div className="btn btn-primary" onClick={()=>{setCurrentProduct(currentProduct - 1)}}>
+                {/* <div className="btn btn-primary" onClick={()=>{setCurrentProduct(currentProduct - 1)}}>
                     Previous {item}
-                </div>
+                </div> */}
 
             </div>
 
