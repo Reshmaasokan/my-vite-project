@@ -1,0 +1,21 @@
+.containerstyle{
+    background-color:grey;
+    padding:20px;
+    width:500px
+}
+
+.headingstyle{
+    color:green;
+    font-weight:bold
+}
+
+.prizestyle{
+    background:green;
+    color:white;
+    font-weight:bold
+}
+
+.stockstyle{
+    color:white;
+    font-weight:bold
+}
