@@ -1,0 +1,32 @@
+[
+    {
+        "id":1,
+        "name":"sparklers",
+        "price":300
+    },
+    {
+        "id":2,
+        "name":"flower pots",
+        "price":300
+    },
+    {
+        "id":3,
+        "name":"ground chakkars",
+        "price":300
+    },
+    {
+        "id":4,
+        "name":"rockets",
+        "price":300
+    },
+    {
+        "id":5,
+        "name":"atom bombs",
+        "price":300
+    },    
+    {
+        "id":6,
+        "name":"magic pencil",
+        "price":300
+    }
+]
