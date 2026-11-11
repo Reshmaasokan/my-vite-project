@@ -4,7 +4,7 @@
     width:500px
 }
 
-.headingstyle{
+.headingstyle:hover{
     color:green;
     font-weight:bold
 }
