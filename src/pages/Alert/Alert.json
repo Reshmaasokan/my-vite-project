@@ -1,0 +1,20 @@
+[
+    {
+        "color":"primary"
+    },
+    {
+        "color":"secondary"
+    },
+    {
+        "color":"info"
+    },
+    {
+        "color":"success"
+    },
+    {
+        "color":"danger"
+    },
+    {
+        "color":"warning"
+    }
+]

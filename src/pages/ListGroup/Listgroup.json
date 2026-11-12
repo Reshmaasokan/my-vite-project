@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "course": "Java",
+        "duration": "3 Months"
+    },
+    {
+        "id": 2,
+        "course": "React",
+        "duration": "2 Months"
+    },
+    {
+        "id": 3,
+        "course": "Python",
+        "duration": "4 Months"
+    },
+    {
+        "id": 4,
+        "course": "SQL",
+        "duration": "1 Month"
+    }
+]
