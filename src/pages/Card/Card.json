@@ -1,0 +1,26 @@
+[
+    {
+        "id":1,
+        "name":"Reshma",
+        "Course":"Full Stack Development",
+        "College":"Anna University Regional Campus Tirunelveli",
+        "Email":"asokanreshma@gmail.com"
+
+    },
+    {
+        "id":2,
+        "name":"Kavitha",
+        "Course":"MERN Stack Development",
+        "College":"Anna University Regional Campus Madurai",
+        "Email":"kavitha@gmail.com"
+
+    },
+    {
+        "id":3,
+        "name":"Naveen",
+        "Course":"Data analytics",
+        "College":"Sathyabama Engineering College",
+        "Email":"naveenasokan@gmail.com"
+
+    }
+]
