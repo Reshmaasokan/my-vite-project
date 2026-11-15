@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react"
 import DisplayCrackers from "../Crackers/components/DisplayCrackers"
 import AddCrackers from "./components/AddCrackers"
-/*import DeleteCrackers from "../Crackers/components/DeleteCrackers"
-import UpdateCrackers from "../Crackers/components/UpdateCrackers"*/
+import UpdateCrackers from "../Crackers/components/UpdateCrackers"
 import crackerinfo from "../Crackers/CrackersDetails/crackers.json"
 export default function CrackersMainPage(){
 
@@ -21,7 +20,7 @@ export default function CrackersMainPage(){
         <div>
           {showadd ? (
             <>
-              <DisplayCrackers cracker={cracker} />
+              <DisplayCrackers cracker={cracker} setCracker={setCracker}/>
               <div className="container">
                 <button className="btn btn-primary" onClick={addform}>
                   Add crackers
@@ -29,8 +28,7 @@ export default function CrackersMainPage(){
               </div>
             </>
           ) : (
-            <AddCrackers 
-            setCracker={setCracker}/>
+            <AddCrackers setCracker={setCracker} cracker={cracker} showadd={showadd} setShowAdd={setShowAdd}/>
           )}
         </div>
       </>
