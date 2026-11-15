@@ -6,6 +6,7 @@ import crackerinfo from "../Crackers/CrackersDetails/crackers.json"
 export default function CrackersMainPage(){
 
     const [cracker,setCracker]=useState([])
+
     const [showadd,setShowAdd]=useState(true)
 
     const addform=()=>{
