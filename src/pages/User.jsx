@@ -1,5 +1,5 @@
 import { useState } from "react";
-import users from "./user.json";
+import users from "../Data/user.json"
 
 export function UserList() {
 
