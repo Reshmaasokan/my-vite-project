@@ -1,9 +1,8 @@
-import Routers from "./Routers";
-
-export default function Apps() {
-    return (
+import Routers from "./Routers"
+export default function Apps(){
+    return(
         <>
-            <Routers />
+          <Routers/>
         </>
-    );
+    )
 }

@@ -1,32 +1,19 @@
-import { Container, Navbar,Nav, Button, Image } from "react-bootstrap"
-import { Link, useNavigate } from "react-router-dom"
-import image from "../assets/profile.jpg"
-
+import { Button, Nav, Navbar } from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Navibar(){
-    const navi=useNavigate()
+    const navibar=useNavigate()
     return(
-    <>
-    <Navbar variant="dark" bg="dark">
-        <Container>
-            <Navbar.Brand as={Link} to={"/"}>
-            <Image src={image} alt="profileimg" width={"30"} height={"40"} roundedCircle className="me-2"/>
-            Profile
-            </Navbar.Brand>
-
-            <Nav className="align-item-center ms-auto">
+        <>
+        <Navbar bg="dark" variant="dark">
+            <Navbar.Brand className="ms-3">User Page</Navbar.Brand>
+            <Nav className="ms-auto">
                 <Nav.Link as={Link} to={"/"}>Home</Nav.Link>
                 <Nav.Link as={Link} to={"/about"}>About</Nav.Link>
-                <Nav.Link as={Link}to={"/contact"}>Contact</Nav.Link>
+                <Nav.Link as={Link} to={"/contact"}>Contact</Nav.Link>
+                <Button className="btn btn-primary me-2"  onClick={()=>navibar("/login")}>Login</Button>
             </Nav>
-
-            <Button variant="primary" className="ms-2" onClick={()=>{navi("/login")}}>Login</Button>
-        </Container>
-
-    </Navbar>
-
-
-   
-    </>
+        </Navbar>
+        </>
     )
 }
