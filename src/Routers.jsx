@@ -16,7 +16,7 @@ export default function Routers(){
           <Route path="/about" element={<About/>}/>
           <Route path="/contact" element={<Contact/>}/>
           <Route path="/login" element={<Login/>}/>
-          <Route path="/user" element={<User/>}/>
+          <Route path="/user/:id" element={<User/>}/>
       </Routes>
     </BrowserRouter>
     </>

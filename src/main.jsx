@@ -1,11 +1,11 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Apps from "./App";
+import Endpoint from "./Service/endPoint";
 
 
 createRoot(document.getElementById("root")).render(
     <StrictMode>
-        <Apps />
+        <Endpoint />
     </StrictMode>
 );
