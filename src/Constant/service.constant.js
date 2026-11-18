@@ -1,12 +1,12 @@
-export const BASEURL="https://fakestoreapi.com/";
+export const BASEURL="https://fakestoreapi.com";
 
 export const URL={
-    "user":"/user",
-    "product":"/product"
+    "user":"/users",
+    "product":"/products"
 }
 
-export const Options={
+export const OPTIONS={
     "headers":{
-        "Content-Type":"application.json"
+        "Content-Type":"application/json"
     }
 }

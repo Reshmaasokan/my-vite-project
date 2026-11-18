@@ -3,16 +3,23 @@ import { useParams } from "react-router-dom"
 import { fetchApiCall } from "../Service/endPoint.call"
 
 export default function User(){
-    const id=useParams()
-    const [user,setUser]=useState([])
 
-    
+  const {id} = useParams() 
+    const [user,setUser]=useState(null)
+
     useEffect(()=>{
-        const endPointPathname=id['user-id']?`user/${id["user-id"]}`: "user"
+
+        const endPointPathname=id?`user/${id}`: "user"
+        console.log(id);
+        console.log(endPointPathname)
+
         fetchApiCall(endPointPathname,"get",{})
+
         .then((data)=>setUser(data))
-        .error((error)=>console.log(error))
-    },[])
+
+        .catch((error)=>console.log(error))
+
+    },[id])
     
     return(
     <>
