@@ -1,7 +1,7 @@
 export const BaseURL="https://fakestoreapi.com"
 
 export const URL={
-    "product":"/product"
+    "product":"/products"
 }
 
 export const OPTIONS={

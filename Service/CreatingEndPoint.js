@@ -15,14 +15,15 @@ export const getEndpoint=(path)=>{
     return endPointURL
 }
 
-export const options=(Method,body={})=>{
-    if(Method.toLowecase()==="get"||Method.toLowecase()==="post"||Method.toLowecase()==="put"){
-        const option={
+export const getOption=(Method,body={})=>{
+       const option={
         ...OPTIONS,
-        method:Method,
-        body:JSON.stringify(body)
+        method:Method.toUpperCase()
+        }
+    if(Method==="get"||Method==="post"||Method==="put"){
+        option.body=JSON.stringify(body)
     }
     return option
-    }
+    
 
 }
