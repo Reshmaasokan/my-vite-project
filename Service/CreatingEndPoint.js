@@ -20,7 +20,7 @@ export const getOption=(Method,body={})=>{
         ...OPTIONS,
         method:Method.toUpperCase()
         }
-    if(Method==="get"||Method==="post"||Method==="put"){
+    if(Method==="patch"||Method==="post"||Method==="put"){
         option.body=JSON.stringify(body)
     }
     return option
