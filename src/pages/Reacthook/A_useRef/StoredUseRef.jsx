@@ -1,22 +1,31 @@
-import { useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 export default function StoredUseRef(){
-    const countref=useRef(0)
 
-    const countElemtref=useRef()
-    
+    const [count,setCount]=useState(0)
+
+    const countPreviousref=useRef()
+
 
     const handleAdd=()=>{
-        countref.current=countref.current+1
-        countElemtref.current.innerText=countref.current
-        console.log(countref.current)
+        setCount(count+1)
     }
+
+    useEffect(()=>{
+        countPreviousref.current=count
+    },[count])
+
     return(
         <>
         <div>
             <h4>
-                <span>Count:</span>
-                <span ref={countElemtref}>{countref.current}</span>
+                <span>Previous Count:</span>
+                <span ref={countPreviousref}>{countPreviousref.current}</span>
+            </h4>
+
+            <h4>
+                <span>Current Count:</span>
+                <span>{count}</span>
             </h4>
             <button onClick={handleAdd} >Add</button>
         </div>
