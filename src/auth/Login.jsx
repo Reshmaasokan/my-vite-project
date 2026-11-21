@@ -1,8 +1,11 @@
 import { useState } from "react"
 import { CardBody, CardTitle,Card} from "react-bootstrap"
+import {useNavigate} from "react-router-dom"
+import {fetchCall} from "../service/endPointCall"
 export default function Login(){
 
     const [loginuser,setLoginUser]=useState({})
+    const navigaet=useNavigate()
 
     const handleEvent=(e)=>{
         const fieldName=e.target.name
@@ -14,15 +17,19 @@ export default function Login(){
     }
 
 
-    const handleSubmit=(e)=>{
+    const handleSubmit= async(e)=>{
         e.preventDefault()
         if(loginuser!={}){
             const payload={
                 "username":loginuser.user,
                 "password":loginuser.password
             }
+            const response= await fetchCall("auth/login","post",payload)
+            if(response && response.token){
+                localStorage.setItem('token',response.token)
+                navigaet('/dashboard')
+            }
         }
-        
     }
     
     return(

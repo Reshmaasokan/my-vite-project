@@ -4,7 +4,8 @@ import About from "./pages/About.page"
 import Contact from "./pages/Contact.page"
 import Dashboard from "./pages/Dashboard"
 import Header from "./component/Header"
-import Login from "./pages/Login.page"
+import Login from "./auth/Login"
+import { loginstatus } from "./helper/helper"
 export default function Router(){
     return(
         <>
@@ -30,5 +31,8 @@ export default function Router(){
 }
 
 export function ProtectionRoute ({children}){
+    if(!loginstatus()){
+        return <Navigate to="/login" replace/>
+    }
     return children
 }
