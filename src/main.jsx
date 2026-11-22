@@ -11,7 +11,7 @@ function App(){
   )
 }
 createRoot(document.getElementById('root')).render(
-  <div>
+  
     <App/>
-  </div>
+  
 )
