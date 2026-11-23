@@ -2,11 +2,11 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
-import Bankdisplay from './pages/Reacthook/D_useReducer/Bankdisplay';
+import Callback from './pages/Reacthook/C_useCallback/Callback';
 function App(){
   const[show,setShow]=useState(true)
   return(
-    <div>{show && (<Bankdisplay/>)
+    <div>{show && (<Callback/>)
       }</div>
   )
 }
