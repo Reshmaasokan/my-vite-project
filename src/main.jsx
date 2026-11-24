@@ -2,11 +2,11 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
-import Callback from './pages/Reacthook/C_useCallback/Callback';
+import User from './pages/Reacthook/E_customHook/User';
 function App(){
   const[show,setShow]=useState(true)
   return(
-    <div>{show && (<Callback/>)
+    <div>{show && (<User/>)
       }</div>
   )
 }
