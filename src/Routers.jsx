@@ -1,22 +1,25 @@
 import { BrowserRouter,Route,Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Navibar from "./Components/Navibar";
+ const Home=lazy(()=>import("./pages/Home"));
+ const About=lazy(()=>import("./pages/About"))
+ const Contact=lazy(()=>import("./pages/Contact"))
+ const Login=lazy(()=>import("./pages/Login"))
+ import Navibar from "./Components/Navibar"
 import { Container } from "react-bootstrap";
-import Login from "./pages/Login";
+import { Suspense,lazy } from "react";
 export default function Routers(){
     return (
       <>
         <Container>
           <BrowserRouter>
-            <Navibar />
+          <Navibar />
+          <Suspense fallback={<h1>Loading....</h1>}>
             <Routes>
               <Route index path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/login" element={<Login/>}/>
             </Routes>
+            </Suspense>
           </BrowserRouter>
         </Container>
       </>
