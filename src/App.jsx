@@ -1,13 +1,12 @@
-import { Provider } from "react-redux";
-import { store } from "./Store/App.store";
-import Routers from "./Routers";
+
+import Login from "./pages/Login/Login";
 
 export default function Apps() {
     return (
         <>
-        <Provider store={store}>
-            <Routers />
-        </Provider>
+      
+            <Login/>
+     
             
         </>
     );

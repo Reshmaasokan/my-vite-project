@@ -1,15 +1,26 @@
+import { useState } from "react";
+import { Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Container } from "react-bootstrap";
 
 export default function Navibar(){
-    return (
-      <>
-        <Container>
-          <nav className="nav gap-3 m-auto">
-            <Link to={"/counter"} className="nav-link">Counter</Link>
-            <Link to={"/CounterDetails"} className="nav-link">Counter Details</Link>
-          </nav>
-          </Container>
-      </>
-    );
+  const [login,SetLogin]=useState(true)
+
+  const handleLogin=()=>{
+    SetLogin(false)
+  }
+
+  return(
+    
+    <>
+    <Navbar>
+      <Navbar.Brand>WebSite</Navbar.Brand>
+      <Nav>
+        <Nav.Link as={Link} to="/home">Home</Nav.Link>
+        <Nav.Link as={Link} to="/about">About</Nav.Link>
+        <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
+        <Button variant="primary" onClick={handleLogin}>{login?("Login"):("Logout")}</Button>
+      </Nav>
+    </Navbar>
+    </>
+  )
 }
