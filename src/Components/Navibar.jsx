@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Nav, Navbar ,Button} from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
+import Dashboard from "../pages/Dashboard";
 
 export default function Navibar(){
   const navi=useNavigate()
@@ -8,7 +9,7 @@ export default function Navibar(){
 
   const handlelogin=()=>{
     setLogin(false)
-    navi("/home")
+    navi("/login")
   }
 
   return(
@@ -23,6 +24,7 @@ export default function Navibar(){
         <Button variant="primary" onClick={handlelogin}>{login?("login"):("logout")}</Button>
       </Nav>
     </Navbar>
+    
     </>
   )
 }

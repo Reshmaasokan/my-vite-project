@@ -4,9 +4,10 @@ export const fetchApicall=async(path,method,body)=>{
         const url=getEndpoint(path)
         const options=getOption(method,body)
         const response=await fetch(url,options)
-        return await response.json()
+        const responseDta= await response.json()
+        return responseDta
     }
     catch(error){
-        console.log("Error::>",error)
+        console.log("Error::",error)
     }
 }

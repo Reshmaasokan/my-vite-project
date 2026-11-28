@@ -12,15 +12,16 @@ export default function Login() {
         <Card.Body>
           <Formik
               initialValues={{ username: "", password: "" }}
-              onSubmit={(value) =>{
+              onSubmit={async(value) =>{
                 const payload={
                   username:value.username,
                   password:value.password
                 }
-                navi("/dashboard")
-                const response=fetchApicall("auth/login","post",payload)
+                
+                const response=await fetchApicall("auth/login","post",payload)
                 if(response&&response.token){
                   localStorage.setItem("token",response.token)
+                  navi("/dashboard")
                 }
             } }
           >

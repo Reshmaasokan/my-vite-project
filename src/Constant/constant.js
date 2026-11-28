@@ -7,7 +7,7 @@ export const endurl={
 }
 
 export const option={
-    "header":{
+    "headers":{
         "Content-Type":"application/json"
     }
 }
